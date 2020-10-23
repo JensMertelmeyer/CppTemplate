@@ -1,0 +1,32 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+		{
+			"type": "shell",
+			"label": "g++ build (c++ 17) [DEBUG]",
+			"command": "g++.exe",
+			"args": [
+				"-std=c++17",
+				"-g",
+				"-Wextra",
+				"-O0",
+				"-o",
+				"${workspaceFolder}\\bin\\${fileBasenameNoExtension}_DEBUG.exe",
+				"${relativeFile}",
+				"${fileDirname}\\src\\**.cpp",
+				"-Iinclude",
+				"-Llib"
+			],
+			"options": {
+				"cwd": "${workspaceFolder}"
+			},
+			"problemMatcher": [
+				"$gcc"
+			],
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			}
+		}		
+	]
+}
