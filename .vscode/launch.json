@@ -9,7 +9,7 @@
 			"type": "cppdbg",
 			"request": "launch",
 			//"program": "Programmnamen eingeben, z. B. \"${workspaceFolder}/a.exe\"",
-			"program": "${workspaceFolder}\\bin\\${fileBasenameNoExtension}_DEBUG.exe",
+			"program": "${workspaceFolder}\\bin\\main_DEBUG.exe",
 			"args": [],
 			"stopAtEntry": false,
 			"cwd": "${workspaceFolder}",
