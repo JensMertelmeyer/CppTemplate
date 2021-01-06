@@ -1,7 +1,7 @@
 #include <iostream>
 #include <string>
 
-#include "Utils/Console.hpp"
+#include "include/Utils/Console.hpp"
 
 int main() {
 	std::cout << "Hello World" << std::endl;

@@ -1,2 +1,5 @@
-makefiletest: program.cpp ./src/Utils.Console.cpp
-	g++ -std=c++17 -g -Wextra -O0 -o ./bin/main_DEBUG.exe program.cpp ./src/Utils.Console.cpp -Iinclude -Llib
+CC=g++
+CFLAGS=-Iinclude -Llib -std=c++17 -g -Wextra -O0
+
+makefiletest: program.o Utils.Console.o
+	$(CC) -o ./bin/main_DEBUG.exe program.o Utils.Console.o
