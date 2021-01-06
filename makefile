@@ -4,18 +4,14 @@ IDIR = ./include
 
 _DEPS= Utils/Console.hpp
 DEPS = $(patsubst %,$(IDIR)/%,$(_DEPS))
-# $(info deps: "$(DEPS)")
 
 ODIR=./obj
 
-
-_OBJ=program.o Utils.Console.o
+_OBJ=program.o Utils/Console.o
 OBJ=$(patsubst %,$(ODIR)/%,$(_OBJ))
-# $(info _obj: $(_OBJ))
-# $(info obj: "$(OBJ)")
 
 
-$(ODIR)/%.o: %.cpp $(DEPS)
+$(ODIR)/%.o: src/%.cpp $(DEPS)
 	$(CC) -c -o $@ $< $(CFLAGS)
 
 makefiletest: $(OBJ)	
