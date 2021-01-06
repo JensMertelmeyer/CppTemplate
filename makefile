@@ -1,11 +1,22 @@
 CC=g++
 CFLAGS=-Iinclude -Llib -std=c++17 -g -Wextra -O0
-DEPS=include/Utils/Console.hpp
-OBJ=program.o Utils.Console.o
+IDIR = ./include
+
+_DEPS= Utils/Console.hpp
+DEPS = $(patsubst %,$(IDIR)/%,$(_DEPS))
+# $(info deps: "$(DEPS)")
+
+ODIR=./obj
 
 
-%.o: %.c $(DEPS)
+_OBJ=program.o Utils.Console.o
+OBJ=$(patsubst %,$(ODIR)/%,$(_OBJ))
+# $(info _obj: $(_OBJ))
+# $(info obj: "$(OBJ)")
+
+
+$(ODIR)/%.o: %.cpp $(DEPS)
 	$(CC) -c -o $@ $< $(CFLAGS)
 
-makefiletest: $(OBJ)
-	$(CC) $(CFLAGS) -o ./bin/main_DEBUG.exe $^ $(CFLAGS)
+makefiletest: $(OBJ)	
+	$(CC) -o ./bin/main_DEBUG.exe $^ $(CFLAGS)
